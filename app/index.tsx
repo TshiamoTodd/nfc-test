@@ -7,7 +7,7 @@ import PromptModal from '@/components/PromptModal'
 
 const HomeScreen = () => {
   const [hasNfc, setHasNfc] = useState<boolean | null>(null)
-  const promptRef = React.useRef<{ setVisible: (visible: boolean) => void }>(null)
+  const promptRef = React.useRef<{ setVisible: (visible: boolean) => void, setHintText: (hintText: string) => void }>()
 
   useEffect(() => {
     const checkNfc = async () => {
@@ -39,7 +39,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView className='flex-1'>
-      <PromptModal />
+      <GameScreen />
     </SafeAreaView>
   )
 }
